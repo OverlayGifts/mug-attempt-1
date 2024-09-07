@@ -70,15 +70,16 @@
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
       <a-entity id="target" mindar-image-target="targetIndex: 0">
-        <!-- Cylinder to wrap video around the mug -->
-        <a-cylinder
-          material="src: #video; side: double"
-          radius="0.35"    <!-- Adjust radius to fit the mug -->
-          height="0.7"     <!-- Adjust height based on mug -->
-          theta-length="180"  <!-- Half-cylinder for wrapping around a mug -->
-          rotation="0 90 0"   <!-- Rotate to face the camera -->
-          position="0 0 0">
-        </a-cylinder>
+        <!-- Curved image adjusted to play directly on the target -->
+        <a-curvedimage
+          material="src: #video"
+          radius="0.7"  <!-- Reduced radius for a smaller curve -->
+          height="0.5"  <!-- Reduced height -->
+          theta-length="90"  <!-- Keeps the curve at 90 degrees -->
+          rotation="0 0 0"
+          scale="0.75 0.75 0.75"  <!-- Scaled down to fit the target -->
+          position="0 0 0">  <!-- Aligns directly with the target -->
+        </a-curvedimage>
       </a-entity>
     </a-scene>
 
@@ -87,7 +88,7 @@
       <div id="playPauseText">Play with Sound</div>
     </div>
 
-    <!-- Custom Button for a Website Link -->
+    <!-- Custom Button -->
     <button id="customButton" onclick="window.location.href='https://www.overlay-ai.com';">WEBSITE</button>
 
     <script>
